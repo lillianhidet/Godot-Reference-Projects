@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=4 uid="uid://bjt3oy8y1wab3"]
+
+[ext_resource type="PackedScene" uid="uid://b8idfdxjrr876" path="res://Scenes/player.tscn" id="4_sjq30"]
+[ext_resource type="PackedScene" uid="uid://brda3d7mpow6y" path="res://levels/level_1.tscn" id="7_cjlfb"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_go701"]
+vertices = PackedVector2Array(240.227, -84.9531, 244.75, 103.953, 181.18, 103.641, 181.461, 70, 181.281, 70, 180.992, 58, 181.367, 58, 53.2813, 70, 52.9922, 58, 53.3672, 58, 155, 70, 53.3672, -38, 52.6094, -70, 155, -70, 155, 10, 52.9922, 42, 53.3672, 42, 52.9922, 26, 53.3672, 26, 52.9922, 10, 53.3672, 10, 155, 22, 52.9922, -6, 53.3672, -6, 180.523, 22, 52.9922, -22, 53.3672, -22, 52.9922, -38, 181.367, 10, 180.992, -6, 181.367, -6, 180.992, -22, 181.367, -22, 180.992, -38, 181.367, -38, 180.992, -54, 181.367, -54, 180.992, -70, 181.172, -70, 181.281, -84.6484, -138.742, 70, -139.023, 58, -138.648, 58, 27, 70, -139.023, 42, -138.648, 42, -139.023, 26, -138.648, 26, -139.023, 10, -138.648, 10, -139.023, -6, -138.648, -6, -139.023, -22, -138.648, -22, -139.023, -38, -138.648, -38, -139.023, -54, -138.648, -54, -139.023, -70, 27, -70)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 3), PackedInt32Array(7, 8, 9, 10), PackedInt32Array(11, 12, 13, 14), PackedInt32Array(9, 15, 16), PackedInt32Array(16, 17, 18), PackedInt32Array(18, 19, 20, 21), PackedInt32Array(21, 20, 22, 23, 14, 24), PackedInt32Array(23, 25, 26, 14), PackedInt32Array(26, 27, 11, 14), PackedInt32Array(28, 29, 30), PackedInt32Array(30, 31, 32), PackedInt32Array(32, 33, 34), PackedInt32Array(34, 35, 36), PackedInt32Array(36, 37, 38), PackedInt32Array(0, 3, 6), PackedInt32Array(0, 6, 24, 28), PackedInt32Array(21, 10, 9, 16), PackedInt32Array(21, 16, 18), PackedInt32Array(24, 14, 28), PackedInt32Array(0, 28, 30), PackedInt32Array(0, 30, 32), PackedInt32Array(0, 32, 34), PackedInt32Array(0, 34, 36), PackedInt32Array(39, 0, 36, 38), PackedInt32Array(40, 41, 42, 43), PackedInt32Array(42, 44, 45, 43), PackedInt32Array(45, 46, 47, 43), PackedInt32Array(47, 48, 49, 43), PackedInt32Array(49, 50, 51, 43), PackedInt32Array(51, 52, 53, 43), PackedInt32Array(53, 54, 55, 43), PackedInt32Array(55, 56, 57, 43), PackedInt32Array(57, 58, 59, 43)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-160, -93, 250, -95, 255, 114, -164, 112)])
+
+[node name="World" type="Node2D"]
+
+[node name="levelHolder" type="Node2D" parent="."]
+
+[node name="level1" parent="levelHolder" instance=ExtResource("7_cjlfb")]
+
+[node name="NavigationRegion2D" parent="levelHolder/level1/level" index="1"]
+navigation_polygon = SubResource("NavigationPolygon_go701")
+
+[node name="walls" parent="levelHolder/level1/level/NavigationRegion2D" index="0"]
+tile_map_data = PackedByteArray("AAACAP3/AAAAAAEAAAACAP7/AAAAAAEAAAACAP//AAAAAAEAAAACAAAAAAAAAAEAAAACAAEAAAAAAAEAAAACAAIAAAAAAAEAAAD2//r/AAABAAAAAAD2//v/AAAAAAEAAAD2//z/AAAAAAEAAAD2//3/AAAAAAEAAAD2//7/AAAAAAEAAAD2////AAAAAAEAAAD2/wAAAAAAAAEAAAD2/wEAAAAAAAEAAAD2/wIAAAAAAAEAAAD2/wMAAAAAAAEAAAD2/wQAAAAAAAEAAAD2/wUAAAABAAIAAAD3/wUAAAACAAMAAAD4/wUAAAACAAMAAAD5/wUAAAACAAMAAAD6/wUAAAACAAMAAAD7/wUAAAACAAMAAAD8/wUAAAACAAMAAAD9/wUAAAACAAMAAAD+/wUAAAACAAMAAAD//wUAAAACAAMAAAAAAAUAAAACAAMAAAABAAUAAAACAAMAAAACAAUAAAACAAMAAAADAAUAAAACAAMAAAAEAAUAAAACAAMAAAAFAAUAAAACAAMAAAAGAAUAAAACAAMAAAAHAAUAAAACAAMAAAAIAAUAAAACAAMAAAAJAAUAAAACAAMAAAAKAAUAAAADAAIAAAAKAAQAAAAAAAEAAAAKAAMAAAAAAAEAAAAKAAIAAAAAAAEAAAAKAP//AAAAAAEAAAAKAP7/AAAAAAEAAAAKAP3/AAAAAAEAAAAKAPz/AAAAAAEAAAAJAPr/AAACAAMAAAAIAPr/AAACAAMAAAAHAPr/AAACAAMAAAAGAPr/AAACAAMAAAAFAPr/AAACAAMAAAAEAPr/AAACAAMAAAADAPr/AAACAAMAAAACAPr/AAACAAMAAAABAPr/AAACAAMAAAAAAPr/AAACAAMAAAD///r/AAACAAMAAAD+//r/AAACAAMAAAD9//r/AAACAAMAAAD8//r/AAACAAMAAAD7//r/AAACAAMAAAD6//r/AAACAAMAAAD5//r/AAACAAMAAAD4//r/AAACAAMAAAD3//r/AAACAAMAAAAKAPr/AAADAAAAAAAKAPv/AAAAAAEAAAA=")
+
+[node name="player" parent="." instance=ExtResource("4_sjq30")]
+position = Vector2(129, 4)
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+zoom = Vector2(3, 3)
+
+[editable path="levelHolder/level1"]
+[editable path="levelHolder/level1/level"]

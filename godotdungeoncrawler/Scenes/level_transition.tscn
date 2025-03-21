@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://mb5fq1343g21"]
+
+[ext_resource type="Script" uid="uid://8ctoegj0vnu0" path="res://Scripts/level_transition.gd" id="1_fl2sx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8iomh"]
+
+[node name="levelTransition" type="Node2D"]
+script = ExtResource("1_fl2sx")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_8iomh")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1qt54fmf6kmg"]
+
+[ext_resource type="Script" uid="uid://c8a58kcpmlg2g" path="res://Scripts/UIManager.gd" id="1_d6yus"]
+[ext_resource type="Texture2D" uid="uid://bapc075rlgtop" path="res://Assets/frames/coin_anim_f0.png" id="2_m4237"]
+
+[node name="ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d6yus")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="healthContainer" type="HBoxContainer" parent="CanvasLayer"]
+offset_right = 84.0
+offset_bottom = 55.0
+
+[node name="pointContainer" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -82.0
+offset_bottom = 55.0
+grow_horizontal = 0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/pointContainer"]
+layout_mode = 2
+texture = ExtResource("2_m4237")
+expand_mode = 2
+
+[node name="pointsLabel" type="Label" parent="CanvasLayer/pointContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "0"
+
+[node name="diedLabel" type="Label" parent="CanvasLayer"]
+visible = false
+offset_left = 492.0
+offset_top = 275.0
+offset_right = 653.0
+offset_bottom = 324.0
+theme_override_font_sizes/font_size = 35
+text = "You Died!"
